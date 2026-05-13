@@ -22,6 +22,13 @@
       align-items: center;
     }
 
+    .nav-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px; /* spacing so Canva can crop each one cleanly */
+      align-items: center;
+    }
+
     .nav-item {
       position: relative;
 
@@ -46,36 +53,27 @@
 
     .nav-item:hover {
       transform: translateY(-2px);
-
       text-shadow:
         0 5px 10px rgba(0, 0, 0, 0.14),
         0 0 8px rgba(255, 255, 255, 0.08);
-
       filter: brightness(1.04);
-
       opacity: 0.98;
     }
 
     .nav-item::after {
       content: "";
-
       position: absolute;
-
       top: 0;
       left: -140%;
-
       width: 55%;
       height: 100%;
-
       background: linear-gradient(
         120deg,
         rgba(255, 255, 255, 0) 0%,
         rgba(255, 255, 255, 0.18) 50%,
         rgba(255, 255, 255, 0) 100%
       );
-
       transform: skewX(-20deg);
-
       pointer-events: none;
     }
 
@@ -84,18 +82,20 @@
     }
 
     @keyframes shimmer {
-      0% {
-        left: -140%;
-      }
-
-      100% {
-        left: 160%;
-      }
+      0% { left: -140%; }
+      100% { left: 160%; }
     }
   </style>
 </head>
 
 <body>
-  <div class="nav-item">home</div>
+  <div class="nav-container">
+    <div class="nav-item">home</div>
+    <div class="nav-item">north star</div>
+    <div class="nav-item">experience</div>
+    <div class="nav-item">explore</div>
+    <div class="nav-item">say hi!</div>
+    <div class="nav-item">notebook</div>
+  </div>
 </body>
 </html>
